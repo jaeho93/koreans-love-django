@@ -1,3 +1,21 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def user_list(request):
+    pass
+
+
+def company_list(request):
+    pass
+
+
+def community_list(request):
+    pass
+
+
+def project_list(request):
+    pass
+
+
+def archive_list(request):
+    pass

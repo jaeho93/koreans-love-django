@@ -5,13 +5,13 @@ def post_list(request):
     pass
 
 
-def detail(request, id):
+def post_detail(request, id):
     pass
 
 
-def delete(request, id):
+def post_delete(request, id):
     pass
 
 
-def write(request):
+def post_write(request):
     pass

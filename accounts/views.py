@@ -5,9 +5,9 @@ def sign_in(request):
     pass
 
 
-def profile(request):
+def user_profile(request):
     pass
 
 
-def delete(request):
+def user_delete(request):
     pass
