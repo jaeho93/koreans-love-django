@@ -1,0 +1,4 @@
+
+
+def info(request):
+    pass
