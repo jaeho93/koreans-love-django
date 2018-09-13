@@ -8,6 +8,9 @@ class DjangoUser(models.Model):
     name = models.CharField(max_length=100)
     profile = models.URLField()
 
+    def __str__(self):
+        return self.name
+
 
 class Company(models.Model):
     CATEGORY_CHOICES = (
@@ -22,10 +25,16 @@ class Company(models.Model):
     url = models.URLField()
     job = models.URLField()
 
+    def __str__(self):
+        self.name
+
 
 class Community(models.Model):
     name = models.CharField(max_length=100)
     url = models.URLField()
+
+    def __str__(self):
+        self.name
 
 
 class Project(models.Model):
@@ -33,8 +42,14 @@ class Project(models.Model):
     description = models.TextField()
     url = models.URLField()
 
+    def __str__(self):
+        self.name
+
 
 class Archive(models.Model):
     author = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
     url = models.URLField() 
+
+    def __str__(self):
+        self.title
