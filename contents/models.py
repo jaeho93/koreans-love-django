@@ -46,7 +46,7 @@ class Project(models.Model):
         self.name
 
 
-class Archive(models.Model):
+class Blog(models.Model):
     author = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
     url = models.URLField() 
