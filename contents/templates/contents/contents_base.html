@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="btn-group-lg" role="group" aria-label="list-label">
+        <a class="btn btn-success" href="{% url 'contents:user_list' %}" role="button">user_list</a>
+        <a class="btn btn-success" href="{% url 'contents:company_list' %}" role="button">company_list</a>
+        <a class="btn btn-success" href="{% url 'contents:community_list' %}" role="button">community_list</a>
+        <a class="btn btn-success" href="{% url 'contents:project_list' %}" role="button">project_list</a>
+        <a class="btn btn-success" href="{% url 'contents:blog_list' %}" role="button">blog_list</a>
+    </div>
+    <div id="content_body">
+        {% block content_body %}
+        {% endblock content_body %}
+    </div>
+{% endblock content %}

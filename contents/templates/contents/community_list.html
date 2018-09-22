@@ -1,27 +1,41 @@
-{% extends "base.html" %}
+{% extends "contents/contents_base.html" %}
 
-{% block content %}
-    {% for community in communities %}
-        {{ community.name }}<br>
-    {% endfor %}
+{% block content_body %}
+    <ul class="list-group">
+        {% for community in communities %}
+        <li class="list-group-item">{{ community.name }}</li>
+        {% endfor %}
+    </ul>
 
-    <div class="pagination">
-        <span class="step-links">
-            {% if communities.has_previous %}
-                <a href="?page=1">&laquo; first</a>
-                <a href="?page={{ communities.previous_page_number }}">previous</a>
-            {% endif %}
+    <nav aria-label="Page navagation">
+        <ul class="pagination justify-content-center">
+            <!--<span class="step-links">-->
+                {% if communities.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page=1">&laquo; 첫 페이지</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ communities.previous_page_number }}">{{ communities.previous_page_number }}</a></li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">&laquo; 첫 페이지</a>
+                    </li>
+                {% endif %}
 
-            <span class="current">
-                Page {{ communities.number }} of {{ communities.paginator.num_pages }}.
-            </span>
+                <span class="current">
+                    <li class="page-item active">
+                        <a class="page-link" href="#">{{ communities.number }} <span class="sr-only">(current)</span></a>
+                    </li>
+                </span>
 
-            {% if communities.has_next %}
-                <a href="?page={{ communities.next_page_number }}">next</a>
-                <a href="?page={{ communities.paginator.num_pages }}">last &raquo;</a>
-            {% endif %}
-        </span>
-    </div>
-{% endblock content %}
+                {% if communities.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ communities.next_page_number }}">{{ communities.next_page_number }}</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ communities.paginator.num_pages }}">마지막 페이지 &raquo;</a></li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">마지막 페이지 &raquo;</a>
+                    </li>
+                {% endif %}
+            <!--</span>-->
+        </ul>
+    </nav>
+{% endblock content_body %}
 
 
